@@ -19,8 +19,10 @@ import {
 } from "@mantine/core";
 import loginGraphic from "@/app/_assets/login_graphic.png";
 import novaLogo from "@/app/_assets/nova_logo.png";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <Center bg="#0E1625" h="100vh" w="100vw">
       <Paper h="500" miw="802">
@@ -56,24 +58,51 @@ export default function Home() {
               placeholder="danieljoe@gmail.com"
               size="md"
               radius="md"
-              styles={{
-                label: { color: "white" },
+              styles={(theme) => ({
                 input: {
-                  backgroundColor: "white",
-                  color: "black",
+                  backgroundColor: theme.white,
+                  color: theme.black,
+
+                  "::placeholder": {
+                    color: theme.colors.gray[5], // typical placeholder color in light theme
+                    opacity: 1,
+                  },
                 },
-              }}
+                label: {
+                  color: theme.white, // keep label styled for dark mode
+                },
+              })}
             />
-            <PasswordInput radius="md" label="Password" size="md" 
-            styles={{
-              label: { color: "white" },
-              input: {
-                backgroundColor: "white",
-                color: "black",
-              },
-            }}/>
+            <PasswordInput
+              radius="md"
+              label="Password"
+              size="md"
+              styles={(theme) => ({
+                visibilityToggle: {
+                  color: "#1A1B1E",
+                },
+
+                input: {
+                  backgroundColor: theme.white,
+                  color: theme.black,
+
+                  "::placeholder": {
+                    color: theme.colors.gray[5],
+                    opacity: 1,
+                  },
+                },
+                label: {
+                  color: theme.white,
+                },
+              })}
+            />
             <Stack gap="xs">
-              <Button bg="#180A3B" radius="md" w="fit-content">
+              <Button
+                bg="#180A3B"
+                radius="md"
+                w="fit-content"
+                onClick={() => router.push("/password")}
+              >
                 Login
               </Button>
               <Text>
