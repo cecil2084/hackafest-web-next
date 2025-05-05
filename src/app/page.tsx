@@ -56,8 +56,40 @@ export default function Home() {
               placeholder="danieljoe@gmail.com"
               size="md"
               radius="md"
+              styles={(theme) => ({
+                input: {
+                  backgroundColor: theme.white,
+                  color: theme.black,
+
+                  "::placeholder": {
+                    color: theme.colors.gray[5], // typical placeholder color in light theme
+                    opacity: 1,
+                  },
+                },
+                label: {
+                  color: theme.white, // keep label styled for dark mode
+                },
+              })}
             />
-            <PasswordInput radius="md" label="Password" size="md" />
+            <PasswordInput
+              radius="md"
+              label="Password"
+              size="md"
+              styles={(theme) => ({
+                input: {
+                  backgroundColor: theme.white,
+                  color: theme.black,
+
+                  "::placeholder": {
+                    color: theme.colors.gray[5], // typical placeholder color in light theme
+                    opacity: 1,
+                  },
+                },
+                label: {
+                  color: theme.white, // keep label styled for dark mode
+                },
+              })}
+            />
             <Stack gap="xs">
               <Button bg="#180A3B" radius="md" w="fit-content">
                 Login
