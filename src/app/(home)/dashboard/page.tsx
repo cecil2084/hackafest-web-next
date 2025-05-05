@@ -1,9 +1,13 @@
+"use client";
+
 import { Button, Group, Image, Stack, Title } from "@mantine/core";
 import brain from "@/app/_assets/brain.svg";
 import virus from "@/app/_assets/virus.svg";
 import lock from "@/app/_assets/lock.svg";
+import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
+  const router = useRouter();
   return (
     <Stack w="100%" p="lg">
       <Title c="cyan" order={1}>
@@ -55,6 +59,7 @@ export default function Dashboard() {
             variant="filled"
             bg="cyan.7"
             c="white"
+            onClick={() => router.push("/phishingSimulator")}
           >
             Try Now
           </Button>
