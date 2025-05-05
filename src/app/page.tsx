@@ -1,95 +1,77 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+// import Image from "next/image";
+import styles from "@/app/page.module.css";
+import {
+  Anchor,
+  Box,
+  Button,
+  Center,
+  Container,
+  Group,
+  Image,
+  Paper,
+  PasswordInput,
+  Stack,
+  Text,
+  TextInput,
+  Title,
+} from "@mantine/core";
+import loginGraphic from "@/app/_assets/login_graphic.png";
+import novaLogo from "@/app/_assets/nova_logo.png";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <Center bg="#0E1625" h="100vh" w="100vw">
+      <Paper h="500" miw="802">
+        <Group
+          h="100%"
+          gap="0"
+          style={{
+            borderRadius: "8px",
+            overflow: "hidden",
+            position: "relative",
+          }}
+        >
+          <Box flex="1" bg="#180A3B" h="100%">
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={novaLogo.src}
+              style={{ position: "absolute", top: "0" }}
+              w="100"
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
+            <Image src={loginGraphic.src} />
+          </Box>
+
+          <Stack
+            justify="center"
+            p="xl"
+            gap="xl"
+            bg="#49299A"
+            h="100%"
+            flex="1"
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <Title order={1}>Login</Title>
+            <TextInput
+              label="E-mail"
+              placeholder="danieljoe@gmail.com"
+              size="md"
+              radius="md"
+            />
+            <PasswordInput radius="md" label="Password" size="md" />
+            <Stack gap="xs">
+              <Button bg="#180A3B" radius="md" w="fit-content">
+                Login
+              </Button>
+              <Text>
+                Don't have an account?{" "}
+                <Anchor<"a"> c="#45EDF2" href="/signup">
+                  Sign Up
+                </Anchor>
+              </Text>
+            </Stack>
+          </Stack>
+        </Group>
+      </Paper>
+    </Center>
   );
 }
