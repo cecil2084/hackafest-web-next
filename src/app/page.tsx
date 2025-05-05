@@ -56,8 +56,22 @@ export default function Home() {
               placeholder="danieljoe@gmail.com"
               size="md"
               radius="md"
+              styles={{
+                label: { color: "white" },
+                input: {
+                  backgroundColor: "white",
+                  color: "black",
+                },
+              }}
             />
-            <PasswordInput radius="md" label="Password" size="md" />
+            <PasswordInput radius="md" label="Password" size="md" 
+            styles={{
+              label: { color: "white" },
+              input: {
+                backgroundColor: "white",
+                color: "black",
+              },
+            }}/>
             <Stack gap="xs">
               <Button bg="#180A3B" radius="md" w="fit-content">
                 Login
