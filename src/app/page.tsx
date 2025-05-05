@@ -101,7 +101,7 @@ export default function Home() {
                 bg="#180A3B"
                 radius="md"
                 w="fit-content"
-                onClick={() => router.push("/password")}
+                onClick={() => router.push("/dashboard")}
               >
                 Login
               </Button>

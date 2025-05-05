@@ -34,6 +34,7 @@ export default function Dashboard() {
             radius="xl"
             variant="white"
             c="#49299A"
+            onClick={() => router.push("/password")}
           >
             Try Now
           </Button>
