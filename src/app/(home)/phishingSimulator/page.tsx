@@ -52,29 +52,29 @@ Always verify the sender and avoid clicking unknown links.`,
         Phishing Simulator
       </Title>
 
-      <Stack w="800px" spacing="xl">
+      <Stack w="800px" gap="xl">
         <Stack
-          spacing={0}
+          gap={0}
           style={{
             borderRadius: "8px",
             overflow: "hidden",
             border: "1px solid #2C3E50",
           }}
         >
-          <Group p="md" bg="#14274B" spacing="xs">
+          <Group p="md" bg="#14274B" gap="xs">
             <span style={circleStyle("#FF5F57")} />
             <span style={circleStyle("#FFBD2E")} />
             <span style={circleStyle("#28C940")} />
           </Group>
           <Divider color="#0E1625" />
-          <Stack p="lg" bg="#1F345C" spacing="md">
+          <Stack p="lg" bg="#1F345C" gap="md">
             <Title order={3} c="white">
               [URGENT] Account Access Suspended – Immediate Action Required
             </Title>
             <Group align="flex-start" justify="space-between" wrap="nowrap">
-              <Group spacing="sm">
+              <Group gap="sm">
                 <Image src={noFace.src} h={50} />
-                <Stack gap={0} spacing={0}>
+                <Stack gap={0}>
                   <Group gap={4}>
                     <Title order={5} c="white">
                       Unibank
@@ -119,6 +119,7 @@ Always verify the sender and avoid clicking unknown links.`,
 
         {feedback && (
           <Alert
+          mb="lg"
             icon={<IconAlertCircle size="1rem" />}
             title={feedback.title}
             color={feedback.color}
